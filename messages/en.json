@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Home",
+    "rooms": "Rooms & Suites",
+    "gallery": "Gallery",
+    "contact": "Contact Us",
+    "reserve": "Reserve",
+    "bookNow": "Book Your Stay"
+  },
+  "hero": {
+    "rating": "Forbes Travel Guide Rating",
+    "title": "Royal Palace",
+    "subtitle": "Hotel & Suites",
+    "description": "Where timeless elegance meets modern luxury. Experience uncompromised comfort, breathtaking city views, and flawless service.",
+    "bookStay": "Book Your Stay",
+    "explore": "Explore Hotel",
+    "discover": "Discover More"
+  },
+  "vision": {
+    "label": "The Vision",
+    "text": "This isn't just about luxury. It's about identity. Progress. Getting unstuck. You're not just looking for a place to stay. You're looking for alignment. That's what we help you find."
+  },
+  "featuredRooms": {
+    "label": "Our Collection",
+    "title": "Signature Suites",
+    "subtitle": "Discover our collection of meticulously designed luxury suites, each offering unparalleled elegance and bespoke service",
+    "discover": "Discover Suite",
+    "exploreAll": "Explore All Rooms"
+  },
+  "amenities": {
+    "label": "Experience",
+    "title": "World-Class Amenities",
+    "subtitle": "From our signature spa to fine dining excellence, every detail is crafted for your comfort"
+  },
+  "testimonials": {
+    "label": "Testimonials",
+    "title": "Guest Testimonials",
+    "subtitle": "Hear from our distinguished guests about their experiences at Royal Palace Hotel"
+  },
+  "footer": {
+    "brand": "Royal Palace",
+    "description": "Experience unparalleled luxury and timeless elegance in the heart of Manhattan.",
+    "navigation": "Navigation",
+    "services": "Services",
+    "contact": "Contact",
+    "address": "Fifth Avenue, Manhattan",
+    "phone": "+1 (212) 555-1234",
+    "email": "concierge@royalpalace.com",
+    "hours": "Concierge: 24/7",
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy"
+  },
+  "contactPage": {
+    "title": "Get in Touch",
+    "subtitle": "Our dedicated concierge team is available 24/7 to assist with your inquiries and reservations",
+    "formTitle": "Send us a Message",
+    "name": "Full Name",
+    "namePlaceholder": "Your name",
+    "email": "Email Address",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone Number",
+    "phonePlaceholder": "+1 (212) 555-1234",
+    "subject": "Subject",
+    "selectSubject": "Select a subject",
+    "reservation": "Room Reservation",
+    "general": "General Inquiry",
+    "event": "Event Planning",
+    "feedback": "Feedback",
+    "other": "Other",
+    "message": "Message",
+    "messagePlaceholder": "Tell us more about your inquiry...",
+    "send": "Send Message",
+    "infoTitle": "Contact Information",
+    "addressLabel": "Address",
+    "phoneLabel": "Telephone",
+    "main": "Main",
+    "reservations": "Reservations",
+    "emailLabel": "Email",
+    "concierge": "Concierge",
+    "hoursLabel": "Hours of Operation",
+    "frontDesk": "Front Desk",
+    "dining": "Dining"
+  },
+  "galleryPage": {
+    "title": "Gallery",
+    "subtitle": "Explore the exquisite beauty and sophistication of Royal Palace Hotel through our carefully curated collection"
+  },
+  "roomsPage": {
+    "title": "Our Collections",
+    "subtitle": "Discover our full range of meticulously designed luxury suites, each offering unparalleled elegance and bespoke service",
+    "capacity": "Capacity",
+    "size": "Size",
+    "from": "From",
+    "perNight": "/night",
+    "viewDetails": "View Details"
+  },
+  "roomDetail": {
+    "reserve": "Reserve This Suite",
+    "priceLabel": "Price Per Night",
+    "checkIn": "Check-in Date",
+    "checkOut": "Check-out Date",
+    "guests": "Guests",
+    "guestOption1": "1 Guest",
+    "guestOption2": "2 Guests",
+    "guestOption3": "3 Guests",
+    "guestOption4": "4+ Guests",
+    "reserveNow": "Reserve Now",
+    "secure": "Secure booking with 24-hour confirmation",
+    "amenities": "In-Room Amenities",
+    "gallery": "Suite Gallery",
+    "notFound": "Room Not Found",
+    "backToRooms": "Back to Rooms"
+  },
+  "marquee": {
+    "items": ["LUXURY SUITES", "FINE DINING", "SPA & WELLNESS", "ROOFTOP POOL", "CONCIERGE SERVICE", "PANORAMIC VIEWS", "BUTLER SERVICE", "PRIVATE EVENTS"]
+  },
+  "amenity": {
+    "spa": "World-Class Spa",
+    "spaDesc": "Rejuvenate with our signature treatments and wellness programs",
+    "dining": "Fine Dining",
+    "diningDesc": "Michelin-starred culinary experiences across three restaurants",
+    "fitness": "Fitness Center",
+    "fitnessDesc": "State-of-the-art equipment and personal training services",
+    "security": "24/7 Security",
+    "securityDesc": "Advanced security systems and dedicated concierge service",
+    "wifi": "High-Speed WiFi",
+    "wifiDesc": "Fiber optic connectivity throughout the hotel",
+    "smart": "Smart Rooms",
+    "smartDesc": "Intuitive automation for lighting, climate, and entertainment",
+    "wine": "Wine Collection",
+    "wineDesc": "Extensive cellar with rare vintages and sommelier service",
+    "events": "Event Spaces",
+    "eventsDesc": "Versatile venues for conferences and celebrations"
+  },
+  "language": {
+    "en": "English",
+    "ar": "العربية"
+  }
+}

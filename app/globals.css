@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-gold: #c49b5b;
+  --color-gold-light: rgba(196, 155, 91, 0.3);
+  --color-gold-border: rgba(196, 155, 91, 0.3);
+  --color-background: #050505;
+  --color-foreground: #f5f5f5;
+  --color-dark-card: #0a0a0a;
+}
+
+:root {
+  --gold: #c49b5b;
+  --gold-light: rgba(196, 155, 91, 0.3);
+  --gold-border: rgba(196, 155, 91, 0.3);
+}
+
+@layer base {
+  * {
+    @apply transition-colors duration-300;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Luxury Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-bold tracking-wide;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  /* Selection styling */
+  ::selection {
+    @apply bg-gold text-background;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gold rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold/80;
+  }
+}
+
+.gold-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  animation: fadeInDown 0.6s ease-out;
+} 

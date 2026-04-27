@@ -1,9 +1,15 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SmoothScroll } from '@/components/smooth-scroll'
+import { LocaleHtmlSetter } from '@/components/locale-html-setter'
 import './globals.css'
+import { Playfair_Display, Inter, Noto_Sans_Arabic } from 'next/font/google'
 
+const notoArabic = Noto_Sans_Arabic({
+  subsets: ['arabic'],
+  variable: '--font-arabic',
+  weight: ['300', '400', '500', '600', '700'],
+})
 const playfair = Playfair_Display({
   subsets: ['latin', 'latin-ext'],
   variable: '--font-playfair',
@@ -17,8 +23,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Royal Palace Hotel - Luxury 5-Star Accommodation',
-  description: 'Experience ultimate luxury at Royal Palace Hotel.',
+  title: 'Cairo Crystal House - Luxury 5-Star Accommodation',
+  description: 'Experience ultimate luxury at Cairo Crystal House.',
   icons: {
     icon: [
       { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
@@ -34,8 +40,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${playfair.variable} ${inter.variable} ${notoArabic.variable} font-sans antialiased bg-background text-foreground`}
       >
+        <LocaleHtmlSetter />
         <SmoothScroll>
           {children}
         </SmoothScroll>

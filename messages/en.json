@@ -9,7 +9,7 @@
   },
   "hero": {
     "rating": "Forbes Travel Guide Rating",
-    "title": "Royal Palace",
+    "title": "Cairo Crystal House",
     "subtitle": "Hotel & Suites",
     "description": "Where timeless elegance meets modern luxury. Experience uncompromised comfort, breathtaking city views, and flawless service.",
     "bookStay": "Book Your Stay",
@@ -35,17 +35,17 @@
   "testimonials": {
     "label": "Testimonials",
     "title": "Guest Testimonials",
-    "subtitle": "Hear from our distinguished guests about their experiences at Royal Palace Hotel"
+    "subtitle": "Hear from our distinguished guests about their experiences at Cairo Crystal House"
   },
   "footer": {
-    "brand": "Royal Palace",
-    "description": "Experience unparalleled luxury and timeless elegance in the heart of Manhattan.",
+    "brand": "Cairo Crystal House",
+    "description": "Experience unparalleled luxury and timeless elegance in the heart of Cairo.",
     "navigation": "Navigation",
     "services": "Services",
     "contact": "Contact",
-    "address": "Fifth Avenue, Manhattan",
-    "phone": "+1 (212) 555-1234",
-    "email": "concierge@royalpalace.com",
+    "address": "174 El Tahrir, Bab Al Louq, Cairo, Egypt",
+    "phone": "+20 15 07550617",
+    "email": "concierge@cairocrystalhouse.com",
     "hours": "Concierge: 24/7",
     "rights": "All rights reserved",
     "privacy": "Privacy Policy",
@@ -61,7 +61,7 @@
     "email": "Email Address",
     "emailPlaceholder": "your@email.com",
     "phone": "Phone Number",
-    "phonePlaceholder": "+1 (212) 555-1234",
+    "phonePlaceholder": "+20 15 07550617",
     "subject": "Subject",
     "selectSubject": "Select a subject",
     "reservation": "Room Reservation",
@@ -85,7 +85,7 @@
   },
   "galleryPage": {
     "title": "Gallery",
-    "subtitle": "Explore the exquisite beauty and sophistication of Royal Palace Hotel through our carefully curated collection"
+    "subtitle": "Explore the exquisite beauty and sophistication of Cairo Crystal House through our carefully curated collection"
   },
   "roomsPage": {
     "title": "Our Collections",
@@ -134,6 +134,18 @@
     "events": "Event Spaces",
     "eventsDesc": "Versatile venues for conferences and celebrations"
   },
+  "location": {
+  "label": "Our Location",
+  "title": "Cairo Crystal House",
+  "subtitle": "Steps from Tahrir Square in the vibrant heart of Cairo, surrounded by history and culture",
+  "addressLabel": "Address",
+  "hoursLabel": "Reception Hours",
+  "phoneLabel": "Reservations",
+  "nearby": "Nearby Landmarks",
+  "openMaps": "Open in Maps",
+  "directions": "Get Directions",
+  "reserve": "Reserve Your Stay"
+},
   "language": {
     "en": "English",
     "ar": "العربية"

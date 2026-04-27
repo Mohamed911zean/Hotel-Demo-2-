@@ -70,7 +70,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none relative z-[70]">
             <span className="font-serif text-[1.5rem] tracking-wide text-white">
-              Royal Palace
+              Cairo Crystal House
             </span>
             <span className="font-sans text-[0.55rem] font-semibold tracking-[0.4em] text-[#c49b5b] uppercase mt-1">
               Hotel & Suites

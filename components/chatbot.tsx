@@ -22,7 +22,7 @@ const QUICK_QUESTIONS = [
   },
   {
     question: 'What amenities are included?',
-    answer: 'Royal Palace Hotel offers spa access, fine dining restaurants, fitness center, concierge service, and 24-hour room service for all guests.',
+    answer: 'Cairo Crystal House offers spa access, fine dining restaurants, fitness center, concierge service, and 24-hour room service for all guests.'
   },
   {
     question: 'Can I cancel my reservation?',
@@ -43,7 +43,7 @@ export function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Welcome to Royal Palace Hotel! How can I assist you today?',
+      text: 'Welcome to Cairo Crystal House! How can I assist you today?',
       sender: 'bot',
       timestamp: new Date(),
     },
@@ -75,7 +75,7 @@ export function Chatbot() {
     setMessages([
       {
         id: '1',
-        text: 'Welcome to Royal Palace Hotel! How can I assist you today?',
+        text: 'Welcome to Cairo Crystal House! How can I assist you today?',
         sender: 'bot',
         timestamp: new Date(),
       },

@@ -3,9 +3,10 @@ import Navbar  from '@/components/navbar'
 import { Chatbot } from '@/components/chatbot'
 import { FeaturedRooms } from '@/components/featured-rooms'
 import { AmenitiesSection } from '@/components/amenities-section'
-import { ReviewsCarousel } from '@/components/reviews-carousel'
+import ReviewsCarousel  from '@/components/reviews-carousel'
 import { Footer } from '@/components/footer'
 import Marquee from '@/components/marquee'
+import {MapSection} from '@/components/map-section'
 import { useTranslations } from 'next-intl'
 import { 
   FadeUp, 
@@ -25,8 +26,7 @@ export default function Home() {
 
  {/* ── INTRO / HIGHLIGHT TEXT ───── */}
       <section style={{ padding: "8rem 2rem", backgroundColor: "#0a0a0a", textAlign: "center" }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-          <FadeUp>
+        <div style={{ marginTop: "2rem", fontFamily: "inherit", fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.2, fontWeight: 300 }}>          <FadeUp>
             <span className="gold-label">{t('vision.label')}</span>
             <Ornament />
           </FadeUp>
@@ -46,6 +46,7 @@ export default function Home() {
       <HorizontalDivider />
       <ReviewsCarousel />
       <HorizontalDivider />
+      <MapSection />
       <Footer />
       <Chatbot />
     </main>

@@ -83,3 +83,11 @@
   color: var(--gold);
   animation: fadeInDown 0.6s ease-out;
 } 
+:root[lang="ar"],
+[lang="ar"] {
+  font-family: var(--font-arabic), sans-serif;
+}
+
+[dir="rtl"] * {
+  font-family: var(--font-arabic), sans-serif;
+}

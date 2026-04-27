@@ -313,15 +313,16 @@ export function SplitTextReveal({ text, delay = 0, style, className }: { text: s
 
 /* ── Highlight Text (Scroll Scrub) ───────────────────────── */
 export function HighlightText({ text, style, highlightColor = "#ffffff", baseColor = "rgba(255,255,255,0.2)" }: { text: string; style?: React.CSSProperties; highlightColor?: string; baseColor?: string }) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null)
+  
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    if (!containerRef.current) return;
+    gsap.registerPlugin(ScrollTrigger)
+    if (!containerRef.current) return
     
-    const chars = containerRef.current.querySelectorAll(".h-char");
+    const words = containerRef.current.querySelectorAll(".h-word")
     
     gsap.fromTo(
-      chars,
+      words,
       { color: baseColor },
       {
         color: highlightColor,
@@ -334,24 +335,20 @@ export function HighlightText({ text, style, highlightColor = "#ffffff", baseCol
           scrub: true,
         },
       }
-    );
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
-  }, [baseColor, highlightColor]);
+    )
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+  }, [baseColor, highlightColor])
+
   return (
-    <div ref={containerRef} style={{ display: "flex", flexWrap: "wrap", ...style }}>
+    <div ref={containerRef} style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", ...style }}>
       {text.split(" ").map((word, wordIndex) => (
-        <div key={wordIndex} style={{ display: "inline-flex", marginRight: "0.25em" }}>
-          {word.split("").map((char, charIndex) => (
-            <span key={charIndex} className="h-char" style={{ color: baseColor }}>
-              {char}
-            </span>
-          ))}
-        </div>
+        <span key={wordIndex} className="h-word" style={{ color: baseColor, marginInlineEnd: "0.25em" }}>
+          {word}
+        </span>
       ))}
     </div>
-  );
+  )
 }
-
 /* ── Parallax Scroll ─────────────────────────────────────── */
 export function ParallaxScroll({ children, speed = 0.5, className, style }: { children: React.ReactNode; speed?: number; className?: string; style?: React.CSSProperties }) {
   const ref = useRef<HTMLDivElement>(null);

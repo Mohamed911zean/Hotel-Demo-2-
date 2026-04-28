@@ -140,14 +140,26 @@
   "location": {
   "label": "Our Location",
   "title": "Cairo Crystal House",
-  "subtitle": "Steps from Tahrir Square in the vibrant heart of Cairo, surrounded by history and culture",
-  "addressLabel": "Address",
-  "hoursLabel": "Reception Hours",
-  "phoneLabel": "Reservations",
-  "nearby": "Nearby Landmarks",
-  "openMaps": "Open in Maps",
-  "directions": "Get Directions",
-  "reserve": "Reserve Your Stay"
+    "subtitle": "Steps from Tahrir Square in the vibrant heart of Cairo, surrounded by history and culture",
+    "addressLabel": "Address",
+    "hoursLabel": "Reception Hours",
+    "phoneLabel": "Reservations",
+    "nearby": "Nearby Landmarks",
+    "openMaps": "Open in Maps",
+    "directions": "Get Directions",
+    "reserve": "Reserve Your Stay"
+  },
+"reviews": {
+  "sectionLabel": "Customer Reviews",
+  "sectionTitleFirstPart": "What Our Guests",
+  "sectionTitleSecondPart": "Say",
+  "overallRating": "Overall",
+  "basedOn": "Based on {count} reviews",
+  "showLess": "Show less",
+  "readMore": "Read more",
+  "viewOnGoogle": "View on Google",
+  "googleReview": "Google Review",
+  "seeAllReviews": "See All Reviews on Google Maps"
 },
   "language": {
     "en": "English",

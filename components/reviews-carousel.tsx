@@ -4,18 +4,11 @@ import { useState } from "react";
 import { Star, ExternalLink, MapPin } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, A11y } from "swiper/modules";
+import { useTranslations } from "next-intl"; // 👈 استيراد الترجمة
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-/* ================================================================
-   GOOGLE MAPS REVIEWS — Mock data ready for real integration
-   
-   HOW TO ADD REAL REVIEWS:
-   1. Go to your Hotel's Google Maps listing
-   2. Copy each reviewer's name, rating, text, date, avatar initial
-   3. Add the Google Maps link to the reviewer's googleMapsUrl field
-   ================================================================ */
 
 interface GoogleReview {
   id: string;
@@ -39,7 +32,7 @@ const googleReviews: GoogleReview[] = [
     date: "March 2024",
     avatarInitial: "A",
     avatarColor: "#2563EB",
-    googleMapsUrl: "https://maps.app.goo.gl/2rMMNPfcpA6pjeVt7", // 👈 حط لينك الكومنت هنا
+    googleMapsUrl: "https://maps.app.goo.gl/2rMMNPfcpA6pjeVt7", 
     location: "Cairo",
   },
   {
@@ -50,7 +43,7 @@ const googleReviews: GoogleReview[] = [
     date: "January 2026",
     avatarInitial: "N",
     avatarColor: "#16A34A",
-    googleMapsUrl: "https://maps.app.goo.gl/abmD6ybQECHaQskeA", // 👈 حط لينك الكومنت هنا
+    googleMapsUrl: "https://maps.app.goo.gl/abmD6ybQECHaQskeA", 
     location: "New Cairo",
   },
   {
@@ -61,7 +54,7 @@ const googleReviews: GoogleReview[] = [
     date: "November 2025",
     avatarInitial: "S",
     avatarColor: "#9333EA",
-    googleMapsUrl: "https://maps.app.goo.gl/2WnpMgxCfRCbNEP6A", // 👈 حط لينك الكومنت هنا
+    googleMapsUrl: "https://maps.app.goo.gl/2WnpMgxCfRCbNEP6A", 
     location: "Zamalek",
   },
   {
@@ -72,7 +65,7 @@ const googleReviews: GoogleReview[] = [
     date: "December 2025",
     avatarInitial: "K",
     avatarColor: "#EA580C",
-    googleMapsUrl: "https://maps.app.goo.gl/bgsDWXXc6WAjg4mA7", // 👈 حط لينك الكومنت هنا
+    googleMapsUrl: "https://maps.app.goo.gl/bgsDWXXc6WAjg4mA7", 
     location: "Sheikh Zayed",
   },
   {
@@ -83,7 +76,7 @@ const googleReviews: GoogleReview[] = [
     date: "November 2025",
     avatarInitial: "L",
     avatarColor: "#0891B2",
-    googleMapsUrl: "https://maps.app.goo.gl/V5NuxdknXWmUfzWe8", // 👈 حط لينك الكومنت هنا
+    googleMapsUrl: "https://maps.app.goo.gl/V5NuxdknXWmUfzWe8", 
     location: "Maadi",
   },
 ];
@@ -107,6 +100,7 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 function ReviewCard({ review }: { review: GoogleReview }) {
+  const t = useTranslations("reviews"); // 👈 استخدام الترجمة جوه الـ Card
   const [expanded, setExpanded] = useState(false);
   const isLong = review.text.length > 200;
   const displayText = isLong && !expanded ? review.text.slice(0, 200) + "…" : review.text;
@@ -168,7 +162,7 @@ function ReviewCard({ review }: { review: GoogleReview }) {
           onClick={() => setExpanded(!expanded)}
           className="text-[0.7rem] text-[#c49b5b] hover:text-white transition-colors bg-transparent border-none cursor-pointer p-0 text-left mb-4 relative z-10 uppercase tracking-widest"
         >
-          {expanded ? "Show less" : "Read more"}
+          {expanded ? t("showLess") : t("readMore")} {/* 👈 ترجمة الأزرار */}
         </button>
       )}
 
@@ -204,7 +198,6 @@ function ReviewCard({ review }: { review: GoogleReview }) {
           </div>
         </div>
 
-        {/* 👈 ده اللينك اللي إنت سألت عليه، رجعتهولك زي ما كان بالظبط */}
         {review.googleMapsUrl ? (
           <a
             href={review.googleMapsUrl}
@@ -212,12 +205,12 @@ function ReviewCard({ review }: { review: GoogleReview }) {
             rel="noopener noreferrer"
             className="flex items-center gap-1 transition-colors duration-200 text-[0.65rem] text-white/40 hover:text-[#c49b5b] uppercase tracking-wider"
           >
-            View on Google
+            {t("viewOnGoogle")} {/* 👈 ترجمة اللينك */}
             <ExternalLink size={10} />
           </a>
         ) : (
           <span className="text-[0.65rem] text-white/40 bg-white/5 px-2 py-1 rounded-full border border-white/10">
-            Google Review
+            {t("googleReview")} {/* 👈 ترجمة البادج */}
           </span>
         )}
       </div>
@@ -226,6 +219,8 @@ function ReviewCard({ review }: { review: GoogleReview }) {
 }
 
 export default function ReviewsCarousel() {
+  const t = useTranslations("reviews"); // 👈 استيراد الترجمة للقسم الرئيسي
+  
   const avgRating = (
     googleReviews.reduce((sum, r) => sum + r.rating, 0) / googleReviews.length
   ).toFixed(1);
@@ -238,14 +233,14 @@ export default function ReviewsCarousel() {
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">
             <span className="text-[0.65rem] text-[#c49b5b] font-semibold tracking-[0.3em] uppercase block">
-              Customer Reviews
+              {t("sectionLabel")} {/* 👈 ترجمة الـ Label */}
             </span>
           </div>
           <h2 className="font-serif text-[clamp(2.5rem,5vw,3.5rem)] font-light text-white leading-tight mb-8">
-            What Our Guests <em className="text-[#c49b5b] italic">Say</em>
+            {t("sectionTitleFirstPart")} <em className="text-[#c49b5b] italic">{t("sectionTitleSecondPart")}</em> {/* 👈 ترجمة العنوان */}
           </h2>
 
-          {/* Aggregate rating (رجعتهولك بنفس الهيكلة بتاعتك) */}
+          {/* Aggregate rating */}
           <div
             className="flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-5 gap-y-3 px-5 py-3.5 sm:py-3 rounded-sm mx-auto mt-2 max-w-[90vw] sm:max-w-max border border-[#c49b5b]/20 bg-[#c49b5b]/5 backdrop-blur-md"
           >
@@ -255,7 +250,7 @@ export default function ReviewsCarousel() {
                   {avgRating}
                 </p>
                 <p className="text-[0.6rem] text-white/50 uppercase tracking-[0.12em] mt-[2px]">
-                  Overall
+                  {t("overallRating")} {/* 👈 ترجمة Overall */}
                 </p>
               </div>
 
@@ -268,7 +263,7 @@ export default function ReviewsCarousel() {
                   ))}
                 </div>
                 <p className="whitespace-nowrap text-[0.7rem] text-white/60 tracking-wider">
-                  Based on {googleReviews.length} reviews
+                  {t("basedOn", { count: googleReviews.length })} {/* 👈 ترجمة "Based on X reviews" */}
                 </p>
               </div>
             </div>
@@ -332,10 +327,10 @@ export default function ReviewsCarousel() {
           </Swiper>
         </div>
 
-        {/* Link to Google Maps page (رجعتهولك زي ما كان) */}
+        {/* Link to Google Maps page */}
         <div className="text-center mt-8">
           <a
-            href="https://www.google.com/maps/place/cairo+crystal+hotel/@30.0448258,31.2564908,2412m/data=!3m1!1e3!4m17!1m5!2m4!1scairo+crystal+hotel!5m2!5m1!1s2026-05-19!3m10!1s0x145840c797a84b9d:0xe126a4e3b118d32d!5m3!1s2026-05-19!4m1!1i2!8m2!3d30.0448258!4d31.2384664!15sChNjYWlybyBjcnlzdGFsIGhvdGVskgEFaG90ZWzgAQA!16s%2Fg%2F11yjh2vxc3?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" // 👈 حط لينك المطعم أو الفندق الرئيسي هنا
+            href="https://www.google.com/maps/place/cairo+crystal+hotel/@30.0448258,31.2564908,2412m/data=!3m1!1e3!4m17!1m5!2m4!1scairo+crystal+hotel!5m2!5m1!1s2026-05-19!3m10!1s0x145840c797a84b9d:0xe126a4e3b118d32d!5m3!1s2026-05-19!4m1!1i2!8m2!3d30.0448258!4d31.2384664!15sChNjYWlybyBjcnlzdGFsIGhvdGVskgEFaG90ZWzgAQA!16s%2Fg%2F11yjh2vxc3?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3.5 border border-[#c49b5b]/50 text-[#c49b5b] hover:bg-[#c49b5b] hover:text-black transition-all duration-300 rounded-sm font-sans text-[0.7rem] uppercase font-bold tracking-[0.2em]"
@@ -347,7 +342,7 @@ export default function ReviewsCarousel() {
               <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
               <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
             </svg>
-            See All Reviews on Google Maps
+            {t("seeAllReviews")} {/* 👈 ترجمة الزرار الرئيسي */}
             <ExternalLink size={14} />
           </a>
         </div>

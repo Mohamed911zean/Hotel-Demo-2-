@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LanguageSwitcher } from "./language-switcher";
+import Image from "next/image"; // 👈 ضروري عشان الـ Logo
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -67,14 +68,29 @@ export default function Navbar() {
       >
         <div className="mx-auto max-w-[1320px] px-6 flex items-center justify-between">
           
-          {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none relative z-[70]">
-            <span className="font-serif text-[1.5rem] tracking-wide text-white">
-              Cairo Crystal House
-            </span>
-            <span className="font-sans text-[0.55rem] font-semibold tracking-[0.4em] text-[#c49b5b] uppercase mt-1">
-              Hotel & Suites
-            </span>
+          {/* ── 1. LOGO SECTION ── */}
+          <Link href="/" className="flex items-center gap-3 relative z-[70] group">
+            {/* أيقونة اللوجو (ظاهرة دايماً) */}
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 transition-transform duration-500 group-hover:scale-105">
+              <Image 
+                src="/logo-2.png" // تأكد من اسم الصورة ومسارها
+                alt="Cairo Crystal Logo" 
+                fill
+                className="object-contain mix-blend-lighten" 
+                priority
+                sizes="(max-width: 768px) 48px, 56px"
+              />
+            </div>
+
+            {/* النص (مخفي في الموبايل، ظاهر في الديسكتوب) */}
+            <div className="hidden md:flex flex-col leading-none">
+              <span className="font-serif text-[1.4rem] tracking-wide text-white">
+                Cairo Crystal
+              </span>
+              <span className="font-sans text-[0.5rem] font-semibold tracking-[0.4em] text-[#c49b5b] uppercase mt-1">
+                Hotel & Suites
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -126,7 +142,7 @@ export default function Navbar() {
           >
             {/* Background Decoration */}
             <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
-              <span className="font-serif text-[25rem] text-[#c49b5b]">R</span>
+              <span className="font-serif text-[25rem] text-[#c49b5b]">C</span>
             </div>
 
             <nav className="flex flex-col items-center gap-10 relative z-[56] w-full max-w-sm mt-10">

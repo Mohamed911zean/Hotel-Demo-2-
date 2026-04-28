@@ -42,7 +42,6 @@
     "description": "Experience unparalleled luxury and timeless elegance in the heart of Cairo.",
     "navigation": "Navigation",
     "services": "Services",
-    "contact": "Contact",
     "address": "174 El Tahrir, Bab Al Louq, Cairo, Egypt",
     "phone": "+20 15 07550617",
     "email": "concierge@cairocrystalhouse.com",
@@ -50,7 +49,11 @@
     "rights": "All rights reserved",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "cookies": "Cookie Policy"
+    "cookies": "Cookie Policy",
+    "home": "Home",
+    "rooms": "Rooms & Suites",
+    "gallery": "Gallery",
+    "contact": "Contact"
   },
   "contactPage": {
     "title": "Get in Touch",

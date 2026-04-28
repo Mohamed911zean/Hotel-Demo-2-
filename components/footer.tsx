@@ -30,16 +30,13 @@ export function Footer() {
             </h4>
             <ul className="space-y-2">
               {[
-                { labelKey: 'nav.home', href: '/' },
-                { labelKey: 'nav.rooms', href: '/rooms' },
-                { labelKey: 'nav.gallery', href: '/gallery' },
-                { labelKey: 'nav.contact', href: '/contact' },
+                { labelKey: 'home', href: '/' },
+                { labelKey: 'rooms', href: '/rooms' },
+                { labelKey: 'gallery', href: '/gallery' },
+                { labelKey: 'contact', href: '/contact' },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-gold transition-colors text-sm"
-                  >
+                  <Link href={link.href} className="text-gray-400 hover:text-gold transition-colors text-sm">
                     {t(link.labelKey as any)}
                   </Link>
                 </li>
@@ -83,14 +80,14 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2 text-gray-400 text-sm">
                 <Phone className="w-4 h-4 text-gold" />
-                <a href="tel:+12125551234" className="hover:text-gold transition-colors">
-                  +1 (212) 555-1234
+                <a href="https://wa.me/201507550617" className="hover:text-gold transition-colors">
+                  +20 15 07550617
                 </a>
               </li>
               <li className="flex items-center gap-2 text-gray-400 text-sm">
                 <Mail className="w-4 h-4 text-gold" />
-                <a href="mailto:concierge@royalpalace.com" className="hover:text-gold transition-colors">
-                  concierge@royalpalace.com
+                <a href="mailto:concierge@cairocrystalhouse.com" className="hover:text-gold transition-colors">
+                  concierge@cairocrystalhouse.com
                 </a>
               </li>
             </ul>

@@ -1,58 +1,104 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import Navbar from '@/components/navbar'
+import BounceGallery from "@/components/bounce-cards"; // 👈 استيراد المكون الجديد
+import Image from "next/image";
+import Navbar from "@/components/navbar";
 import { Footer } from '@/components/footer'
-import { Ornament, HorizontalDivider } from '@/components/animated-elements'
-import { useTranslations } from 'next-intl'
+import { Chatbot } from "@/components/chatbot"; 
 
-const GALLERY_ITEMS = [
-  { src: '/gallery-1.jpg', alt: 'Grand Lobby', category: 'Spaces' },
-  { src: '/suite-1.jpg', alt: 'Royal Suite', category: 'Rooms' },
-  { src: '/gallery-2.jpg', alt: 'Rooftop Pool', category: 'Wellness' },
-  { src: '/suite-2.jpg', alt: 'Diamond Suite', category: 'Rooms' },
-  { src: '/gallery-3.jpg', alt: 'Fine Dining', category: 'Culinary' },
-  { src: '/suite-3.jpg', alt: 'Emerald Suite', category: 'Rooms' },
-  { src: '/gallery-4.jpg', alt: 'Fitness Center', category: 'Wellness' },
-  { src: '/suite-4.jpg', alt: 'Sapphire Suite', category: 'Rooms' },
-  { src: '/gallery-5.jpg', alt: 'VIP Lounge', category: 'Spaces' },
-]
+const bounceImages = [
+  "/hotel_pool.jpg",
+  "/room_presidential.jpg",
+  "/room_junior.jpg",
+  "/room_deluxe.jpg",
+  "/hotel_lobby.jpg",
+  "/hotel_ballroom.jpg",
+  "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1400&q=80", 
+  "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1400&q=80", 
+  "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1400&q=80",
+  "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1400&q=80",
+  "https://images.unsplash.com/photo-1519690889869-e705e59f72e1?w=1400&q=80",
+  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1400&q=80",
+  "https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?w=1400&q=80",
+  "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=1400&q=80",
+
+];
+
+const gridImages = [
+  "/hotel_pool.jpg",
+  "/room_presidential.jpg",
+  "/room_junior.jpg",
+  "/room_deluxe.jpg",
+  "/hotel_lobby.jpg",
+  "/hotel_ballroom.jpg",
+  "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1400&q=80", 
+  "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1400&q=80", 
+  "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1400&q=80",
+  "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1400&q=80",
+  "https://images.unsplash.com/photo-1519690889869-e705e59f72e1?w=1400&q=80",
+  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1400&q=80",
+  "https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?w=1400&q=80",
+  "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=1400&q=80",
+
+];
 
 export default function GalleryPage() {
-  const t = useTranslations('galleryPage')
-  const containerVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.05, delayChildren: 0.1 } } }
-  const itemVariants = { hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } } }
-
   return (
     <div className="bg-background">
-      <Navbar />
-      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-dark-card to-background">
-        <motion.div className="max-w-7xl mx-auto text-center" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <h1 className="font-serif text-6xl md:text-7xl text-white mb-6 tracking-tight">{t('title')}</h1>
-          <div className="flex justify-center mb-6"><Ornament align="center" width={64} /></div>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">{t('subtitle')}</p>
-        </motion.div>
-      </section>
+    <Navbar />
+    <main className="min-h-screen bg-[#050505] pt-32 pb-24 overflow-hidden">
+      
+      {/* ── HEADER ── */}
+      <div className="text-center px-5 max-w-3xl mx-auto mb-12">
+        <span className="font-sans text-[0.65rem] text-[#c49b5b] font-semibold tracking-[0.3em] uppercase block mb-4">
+          The Visual Journey
+        </span>
+        <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] font-light text-white leading-tight mb-6">
+          A Glimpse of <em className="text-[#c49b5b] italic">Elegance</em>
+        </h1>
+        <p className="font-sans text-sm text-white/60 font-light leading-relaxed tracking-wide">
+          Immerse yourself in the breathtaking architecture, exquisite suites, and world-class amenities.
+        </p>
+      </div>
 
-      <section className="py-24 px-6 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[250px]" variants={containerVariants} initial="hidden" animate="visible">
-            {GALLERY_ITEMS.map((item, index) => (
-              <motion.div key={index} variants={itemVariants} className={`group relative overflow-hidden rounded-sm cursor-pointer ${index % 5 === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
-                <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
-                <motion.div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" initial={{ opacity: 0 }} whileHover={{ opacity: 1 }} />
-                <motion.div className="absolute inset-0 border border-gold-border opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <motion.div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" initial={{ opacity: 0, y: 10 }} whileHover={{ opacity: 1, y: 0 }}>
-                  <h3 className="font-serif text-2xl text-white mb-2">{item.alt}</h3>
-                  <p className="text-gold text-sm font-semibold uppercase tracking-widest">{item.category}</p>
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
+      {/* ── CAROUSEL HERO (NEW) ── */}
+      <BounceGallery images={bounceImages} />
+
+      {/* ── MASONRY GRID GALLERY ── */}
+      <section className="max-w-[1320px] mx-auto px-5 mt-20">
+        <div className="flex items-center gap-4 mb-10">
+          <h2 className="font-serif text-2xl text-white">Full Gallery</h2>
+          <div className="h-px bg-white/10 flex-1" />
+        </div>
+
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+          {gridImages.map((src, idx) => (
+            <div 
+              key={idx} 
+              className="relative group break-inside-avoid overflow-hidden border border-white/5 rounded-sm bg-[#0a0a0a]"
+            >
+              <div className="relative w-full" style={{ aspectRatio: idx % 2 === 0 ? "3/4" : "4/3" }}>
+                <Image
+                  src={src}
+                  alt={`Hotel gallery ${idx}`}
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                <span className="text-[#c49b5b] font-sans text-xs uppercase tracking-widest font-semibold">
+                  View Detail
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
-      <HorizontalDivider />
-      <Footer />
+
+    </main>
+    <Footer />
+    <Chatbot />
     </div>
-  )
+  );
 }

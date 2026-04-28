@@ -7,12 +7,81 @@ import { Footer } from '@/components/footer'
 import { ArrowRight } from 'lucide-react'
 import { Ornament, HorizontalDivider } from '@/components/animated-elements'
 import { useTranslations } from 'next-intl'
+import { Chatbot } from '@/components/chatbot'
 
 const ALL_ROOMS = [
-  { id: 1, nameKey: 'Royal Suite', description: 'Experience ultimate opulence with a private entrance, spa bath, and panoramic views', capacity: '2', size: '650 sqft', price: '$2,500', image: '/suite-1.jpg' },
-  { id: 2, nameKey: 'Diamond Penthouse', description: 'Exclusive top-floor suite with private rooftop access and tailored concierge service', capacity: '4', size: '1,200 sqft', price: '$4,500', image: '/suite-2.jpg' },
-  { id: 3, nameKey: 'Emerald Premier', description: 'Sophisticated contemporary design with private spa and floor-to-ceiling windows', capacity: '2', size: '700 sqft', price: '$2,800', image: '/suite-3.jpg' },
-  { id: 4, nameKey: 'Sapphire Grand', description: 'Luxurious two-bedroom suite with private living spaces and exclusive amenities', capacity: '6', size: '1,500 sqft', price: '$5,000', image: '/suite-4.jpg' },
+  { 
+    id: 1, 
+    nameKey: 'Deluxe King Room', 
+    description: 'A spacious room featuring a king-sized bed, marble bathroom, and stunning city views', 
+    capacity: '2', 
+    size: '450 sqft', 
+    price: '$250', 
+    image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=2000&q=85' 
+  },
+  { 
+    id: 2, 
+    nameKey: 'Executive Suite', 
+    description: 'Designed for business and comfort, featuring a separate living area and ergonomic workspace', 
+    capacity: '2', 
+    size: '750 sqft', 
+    price: '$450', 
+    image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=2000&q=85' 
+  },
+  { 
+    id: 3, 
+    nameKey: 'Premier Twin Room', 
+    description: 'Elegant room with two twin beds, perfect for friends or family traveling together', 
+    capacity: '2', 
+    size: '480 sqft', 
+    price: '$220', 
+    image: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=2000&q=85' 
+  },
+  { 
+    id: 4, 
+    nameKey: 'Junior Suite', 
+    description: 'A stylish open-plan suite with a comfortable seating area and premium amenities', 
+    capacity: '3', 
+    size: '600 sqft', 
+    price: '$350', 
+    image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=2000&q=85' 
+  },
+  { 
+    id: 5, 
+    nameKey: 'Family Suite', 
+    description: 'Spacious accommodation with two bedrooms and a shared living space for the whole family', 
+    capacity: '4', 
+    size: '950 sqft', 
+    price: '$550', 
+    image: '/room_deluxe.jpg' 
+  },
+  { 
+    id: 6, 
+    nameKey: 'Superior Room', 
+    description: 'A cozy and modern room equipped with everything needed for a relaxing stay', 
+    capacity: '2', 
+    size: '380 sqft', 
+    price: '$180', 
+    image: '/room_presidential.jpg' 
+  },
+  { 
+    id: 7, 
+    nameKey: 'Terrace Suite', 
+    description: 'Features a private balcony with panoramic views, ideal for evening relaxation', 
+    capacity: '2', 
+    size: '700 sqft', 
+    price: '$500', 
+    image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=2000&q=85' 
+  },
+  { 
+    id: 8, 
+    nameKey: 'Business Suite', 
+    description: 'Includes a dedicated meeting space and high-speed connectivity for professionals', 
+    capacity: '2', 
+    size: '800 sqft', 
+    price: '$400', 
+    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=2000&q=85' 
+  }
 ]
 
 export default function RoomsPage() {
@@ -74,6 +143,7 @@ export default function RoomsPage() {
       </section>
       <HorizontalDivider />
       <Footer />
+      <Chatbot />
     </div>
   )
 }

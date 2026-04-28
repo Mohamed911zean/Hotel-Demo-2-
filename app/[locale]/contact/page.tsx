@@ -7,6 +7,7 @@ import { Footer } from '@/components/footer'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 import { Ornament, HorizontalDivider } from '@/components/animated-elements'
 import { useTranslations } from 'next-intl'
+import { Chatbot } from '@/components/chatbot'
 
 export default function ContactPage() {
   const t = useTranslations('contactPage')
@@ -131,6 +132,7 @@ export default function ContactPage() {
       </section>
       <HorizontalDivider />
       <Footer />
+      <Chatbot />
     </div>
   )
 }
